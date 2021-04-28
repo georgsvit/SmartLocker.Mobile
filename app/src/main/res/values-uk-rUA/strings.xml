@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SmartLocker.Mobile</string>
+    <string name="invalid_email">Недійсна електронна адреса</string>
+    <string name="invalid_password">Пароль повинен містити більше 5 символів</string>
+    <string name="email">Електронна пошта</string>
+    <string name="password">Пароль</string>
+    <string name="login">Увійти</string>
+    <string name="error">Помилка</string>
+    <string name="loading">Загрузка</string>
+    <string name="processing">В обробці</string>
+</resources>
