@@ -19,4 +19,8 @@ data class ToolResponse(
     var ServiceBook: ServiceBookResponse,
     @SerializedName("locker")
     var Locker: LockerResponse
-)
+) {
+//    fun isInUse() : String {
+//        if
+//    }
+}

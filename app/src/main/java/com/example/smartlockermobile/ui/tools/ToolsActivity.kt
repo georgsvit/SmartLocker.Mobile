@@ -8,5 +8,10 @@ class ToolsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tools)
+
+        val actionBar = supportActionBar
+        if (actionBar != null) {
+            actionBar.title = getString(R.string.tools_title)
+        }
     }
 }

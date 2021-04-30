@@ -9,4 +9,11 @@
     <string name="error">Помилка</string>
     <string name="loading">Загрузка</string>
     <string name="processing">В обробці</string>
+    <string name="tools_title">Інструменти</string>
+    <string name="toolId">Id</string>
+    <string name="tool_name">Назва</string>
+    <string name="description">Опис</string>
+    <string name="accessLevel">Рівень доступу</string>
+    <string name="tool_state">Стан</string>
+    <string name="tool_details_title">Інформація про інструмент</string>
 </resources>

@@ -1,5 +1,6 @@
 package com.example.smartlockermobile.ui.tools
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,6 +10,7 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.example.smartlockermobile.R
 import com.example.smartlockermobile.databinding.FragmentToolsBinding
+import com.example.smartlockermobile.ui.details.DetailsActivity
 
 class ToolsFragment : Fragment() {
     private lateinit var viewModel: ToolsViewModel
@@ -21,8 +23,7 @@ class ToolsFragment : Fragment() {
         binding.toolsViewModel = viewModel
         binding.toolsGrid.adapter = ToolsGridAdapter(ToolsGridAdapter.OnClickListener {
             viewModel.saveToolIdToSP(it.Id)
-//            startActivity(Intent(context, DetailActivity::class.java))
-            Toast.makeText(context, "Tool details", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(context, DetailsActivity::class.java))
         })
 
         return binding.root
