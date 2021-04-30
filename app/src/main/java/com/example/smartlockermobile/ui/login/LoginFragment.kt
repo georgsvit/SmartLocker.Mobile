@@ -1,5 +1,6 @@
 package com.example.smartlockermobile.ui.login
 
+import android.content.Intent
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,11 +8,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.widget.doAfterTextChanged
 import androidx.databinding.DataBindingUtil
 import com.example.smartlockermobile.R
 import androidx.lifecycle.Observer
 import com.example.smartlockermobile.data.network.ApiStatus
 import com.example.smartlockermobile.databinding.FragmentLoginBinding
+import com.example.smartlockermobile.ui.tools.ToolsActivity
 import java.util.*
 
 class LoginFragment : Fragment() {
@@ -43,9 +46,8 @@ class LoginFragment : Fragment() {
 
         viewModel.tokenDate.observe(viewLifecycleOwner, Observer {  date ->
             if (date != null && date > Calendar.getInstance().time) {
-//                startActivity(Intent(context, HomeActivity::class.java))
-                Toast.makeText(context, "Transition to Home", Toast.LENGTH_SHORT).show()
-//                activity?.finish()
+                startActivity(Intent(context, ToolsActivity::class.java))
+                activity?.finish()
             }
         })
 
@@ -53,9 +55,8 @@ class LoginFragment : Fragment() {
             when (newStatus) {
                 ApiStatus.ERROR -> Toast.makeText(context, getString(R.string.error), Toast.LENGTH_SHORT).show()
                 ApiStatus.DONE -> {
-//                    startActivity(Intent(context, HomeActivity::class.java))
-                    Toast.makeText(context, "Transition to Home", Toast.LENGTH_SHORT).show()
-//                    activity?.finish()
+                    startActivity(Intent(context, ToolsActivity::class.java))
+                    activity?.finish()
                 }
                 ApiStatus.LOADING -> Toast.makeText(context, getString(R.string.loading), Toast.LENGTH_SHORT).show()
                 else -> Toast.makeText(context, getString(R.string.processing), Toast.LENGTH_SHORT).show()

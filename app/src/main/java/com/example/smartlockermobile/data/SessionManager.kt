@@ -47,4 +47,14 @@ class SessionManager(context: Context) {
         val dateInString = prefs.getString(dateName, null)
         return if (dateInString != null) formatter.parse(dateInString) else null
     }
+
+    fun saveToolId(id: String) {
+        val editor = prefs.edit()
+        editor.putString("toolId", id)
+        editor.apply()
+    }
+
+    fun fetchToolId() : String {
+        return prefs.getString("toolId", "-1")!!
+    }
 }
