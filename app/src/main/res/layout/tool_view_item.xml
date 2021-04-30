@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="tool"
+            type="com.example.smartlockermobile.data.network.dto.responses.ToolResponse" />
+        <import type="android.view.View"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="100dp"
+        android:layout_height="125dp">
+
+        <ImageView
+            android:id="@+id/avatar"
+            imageUrl="@{tool.imgUrl}"
+            android:layout_width="170dp"
+            android:layout_height="220dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/avatars" />
+        
+    </RelativeLayout>
+
+</layout>
