@@ -15,4 +15,11 @@
     <string name="accessLevel">Access Level</string>
     <string name="tool_state">State</string>
     <string name="tool_details_title">Tool details</string>
+    <string name="queue_button">Enter a queue</string>
+    <string name="queue_success">You have registered in queue successfully</string>
+    <string name="queue_fail">You can\'t register in queue</string>
+    <string name="service_required">Service required</string>
+    <string name="in_service">In service</string>
+    <string name="service_requested">Service requested</string>
+    <string name="served">Maintanded</string>
 </resources>

@@ -16,4 +16,11 @@
     <string name="accessLevel">Рівень доступу</string>
     <string name="tool_state">Стан</string>
     <string name="tool_details_title">Інформація про інструмент</string>
+    <string name="queue_button">Встати у чергу</string>
+    <string name="queue_success">Ви успішно зареєструвалися у черзі</string>
+    <string name="queue_fail">Ви не можете зареєструватися</string>
+    <string name="service_required">Обслуговування необхідне</string>
+    <string name="in_service">Обслуговується</string>
+    <string name="service_requested">Обслуговування замовлено</string>
+    <string name="served">Обслуговування не потрібне</string>
 </resources>

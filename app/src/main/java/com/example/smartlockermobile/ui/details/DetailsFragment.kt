@@ -32,6 +32,21 @@ class DetailsFragment : Fragment() {
             binding.accessLvl.text = getString(R.string.accessLevel) + ": " + it.AccessLevel
             binding.state.text = getString(R.string.tool_state) + ": " + it.ServiceState
 
+            when (it.ServiceState) {
+                "SERVICE_REQUIRED" -> {
+                    binding.state.text = getString(R.string.tool_state) + ": " + getString(R.string.service_required)
+                }
+                "IN_SERVICE" -> {
+                    binding.state.text = getString(R.string.tool_state) + ": " + getString(R.string.in_service)
+                }
+                "SERVICE_REQUESTED" -> {
+                    binding.state.text = getString(R.string.tool_state) + ": " + getString(R.string.service_requested)
+                }
+                "SERVED" -> {
+                    binding.state.text = getString(R.string.tool_state) + ": " + getString(R.string.served)
+                }
+            }
+
             val imgUri = it.ImgUrl.toUri().buildUpon().scheme("https").build()
             Glide.with(binding.avatar.context)
                 .load(imgUri)
@@ -39,21 +54,17 @@ class DetailsFragment : Fragment() {
                 .into(binding.avatar)
         })
 
-//        binding.procedure.setOnClickListener {
-//
-//            if (viewModel.deviceNames.isEmpty()) {
-//                Toast.makeText(context, getString(R.string.devices_error), Toast.LENGTH_SHORT).show()
-//            } else {
-//                createProcedure()
-//            }
-//        }
+        binding.queueBtn.setOnClickListener {
+            viewModel.enterQueue()
+        }
 
-//        viewModel.status.observe(viewLifecycleOwner, Observer {
-//            if (it == ApiStatus.DONE) {
-//                activity?.finish()
-//            }
-//        })
-
+        viewModel.queueResult.observe(viewLifecycleOwner, Observer {
+            if (it) {
+                Toast.makeText(context, getString(R.string.queue_success), Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(context, getString(R.string.queue_fail), Toast.LENGTH_SHORT).show()
+            }
+        })
 
         return binding.root
     }

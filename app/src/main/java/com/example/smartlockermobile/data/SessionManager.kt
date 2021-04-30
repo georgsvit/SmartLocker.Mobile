@@ -42,6 +42,10 @@ class SessionManager(context: Context) {
         return prefs.getString(USER_ROLE, null).toString()
     }
 
+    fun fetchUserId(): String {
+        return prefs.getString(USER_ID, null).toString()
+    }
+
     fun fetchDate(dateName: String): Date? {
         val formatter = SimpleDateFormat("EEE MMM d HH:mm:ss Z yyyy", Locale.ENGLISH)
         val dateInString = prefs.getString(dateName, null)

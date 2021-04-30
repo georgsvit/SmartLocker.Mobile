@@ -6,6 +6,7 @@ import androidx.lifecycle.*
 import com.example.smartlockermobile.data.SessionManager
 import com.example.smartlockermobile.data.network.ApiClient
 import com.example.smartlockermobile.data.network.ApiStatus
+import com.example.smartlockermobile.data.network.dto.requests.QueueRegisterRequest
 import com.example.smartlockermobile.data.network.dto.responses.LockerResponse
 import com.example.smartlockermobile.data.network.dto.responses.ServiceBookResponse
 import com.example.smartlockermobile.data.network.dto.responses.ToolResponse
@@ -20,6 +21,9 @@ class DetailsViewModel(application: Application) : AndroidViewModel(application)
 
     private val _status = MutableLiveData<ApiStatus>()
     val status: LiveData<ApiStatus> = _status
+
+    private val _queueResult = MutableLiveData<Boolean>()
+    val queueResult: LiveData<Boolean> = _queueResult
 
     private var sessionManager: SessionManager
     private var _token: String
@@ -49,5 +53,17 @@ class DetailsViewModel(application: Application) : AndroidViewModel(application)
         }
     }
 
-
+    fun enterQueue() {
+        viewModelScope.launch {
+            val apiClient = ApiClient()
+            val userId = sessionManager.fetchUserId()
+            try {
+                _queueResult.value = apiClient.getApiService().enterQueue(QueueRegisterRequest(userId, _selectedToolId.value!!), "Bearer $_token")
+                Log.i("API", "Procedure: POST QueueRequest Value: ${_queueResult.value}")
+            } catch (e: java.lang.Exception) {
+                Log.i("API", "Procedure: POST QueueRequest Error: $e")
+                _queueResult.value = false
+            }
+        }
+    }
 }
