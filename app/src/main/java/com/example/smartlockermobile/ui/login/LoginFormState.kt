@@ -1,4 +1,4 @@
-package com.example.smartlockermobile.ui
+package com.example.smartlockermobile.ui.login
 
 data class LoginFormState(
     val emailError: Int? = null,

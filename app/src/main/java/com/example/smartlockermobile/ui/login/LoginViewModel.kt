@@ -1,4 +1,4 @@
-package com.example.smartlockermobile.ui
+package com.example.smartlockermobile.ui.login
 
 import android.app.Application
 import android.util.Log
