@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.smartlockermobile.MainActivity
 import com.example.smartlockermobile.R
 import com.example.smartlockermobile.data.SessionManager
+import com.example.smartlockermobile.ui.notifications.NotificationsActivity
 
 class ToolsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,6 +33,10 @@ class ToolsActivity : AppCompatActivity() {
             SessionManager(application).removeAllData()
             this.finish()
             startActivity(Intent(applicationContext, MainActivity::class.java))
+        }
+
+        if(item.itemId == R.id.notification) {
+            startActivity(Intent(applicationContext, NotificationsActivity::class.java))
         }
         return super.onOptionsItemSelected(item)
 
