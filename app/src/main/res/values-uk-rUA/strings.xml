@@ -23,4 +23,6 @@
     <string name="in_service">Обслуговується</string>
     <string name="service_requested">Обслуговування замовлено</string>
     <string name="served">Обслуговування не потрібне</string>
+    <string name="notifications_title">Сповіщення</string>
+    <string name="tool_is_available">"Інструмент доступний "</string>
 </resources>
