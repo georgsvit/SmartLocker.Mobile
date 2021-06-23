@@ -6,4 +6,5 @@ object Constants {
     const val TOOL_URL = "tool/"
     const val TOOL_ID_URL = "{toolId}"
     const val QUEUE_URL = "accounting/queue"
+    const val NOTIFICATIONS_URL = "accounting/notification/worker/{id}"
 }

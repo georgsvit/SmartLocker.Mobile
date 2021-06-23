@@ -22,6 +22,27 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:srcCompat="@tools:sample/avatars" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+            app:layout_constraintTop_toBottomOf="@+id/avatar">
+
+            <TextView
+                android:id="@+id/toolId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:fontFamily="sans-serif-light"
+                android:gravity="fill_horizontal"
+                android:padding="3dip"
+                android:singleLine="false"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="#20291D"
+                android:textSize="18sp" />
+        </LinearLayout>
+
         <TableLayout
             android:id="@+id/tableLayout"
             android:layout_width="match_parent"
@@ -30,25 +51,6 @@
             android:stretchColumns="1"
             app:layout_constraintTop_toBottomOf="@+id/avatar"
             tools:layout_editor_absoluteX="0dp">
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/toolId"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:fontFamily="sans-serif-light"
-                    android:gravity="fill_horizontal"
-                    android:inputType="textMultiLine"
-                    android:padding="3dip"
-                    android:singleLine="false"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:textColor="#20291D"
-                    android:textSize="18sp" />
-            </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
@@ -72,12 +74,11 @@
 
                 <TextView
                     android:id="@+id/description"
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:fontFamily="sans-serif-light"
                     android:gravity="fill_horizontal"
-                    android:inputType="textMultiLine"
                     android:singleLine="false"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="#20291D"
@@ -95,7 +96,6 @@
                     android:layout_margin="10dp"
                     android:fontFamily="sans-serif-light"
                     android:gravity="fill_horizontal"
-                    android:inputType="textMultiLine"
                     android:singleLine="false"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="#20291D"
@@ -113,7 +113,6 @@
                     android:layout_margin="10dp"
                     android:fontFamily="sans-serif-light"
                     android:gravity="fill_horizontal"
-                    android:inputType="textMultiLine"
                     android:singleLine="false"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="#20291D"

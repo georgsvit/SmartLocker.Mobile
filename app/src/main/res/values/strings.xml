@@ -21,5 +21,7 @@
     <string name="service_required">Service required</string>
     <string name="in_service">In service</string>
     <string name="service_requested">Service requested</string>
-    <string name="served">Maintanded</string>
+    <string name="served">Maintained</string>
+    <string name="notifications_title">Notifications</string>
+    <string name="tool_is_available">Tool is available</string>
 </resources>

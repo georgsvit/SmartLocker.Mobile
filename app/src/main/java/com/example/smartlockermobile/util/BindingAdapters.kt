@@ -1,5 +1,6 @@
 package com.example.smartlockermobile.util
 
+import android.app.Notification
 import android.widget.ImageView
 import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
@@ -7,12 +8,20 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.smartlockermobile.R
+import com.example.smartlockermobile.data.network.dto.responses.NotificationResponse
 import com.example.smartlockermobile.data.network.dto.responses.ToolResponse
+import com.example.smartlockermobile.ui.notifications.NotificationsGridAdapter
 import com.example.smartlockermobile.ui.tools.ToolsGridAdapter
 
 @BindingAdapter("toolsListData")
 fun bindToolsRecyclerView(recyclerView: RecyclerView, data: List<ToolResponse>?) {
     val adapter = recyclerView.adapter as ToolsGridAdapter
+    adapter.submitList(data)
+}
+
+@BindingAdapter("notificationsListData")
+fun bindNotificationsRecyclerView(recyclerView: RecyclerView, data: List<NotificationResponse>?) {
+    val adapter = recyclerView.adapter as NotificationsGridAdapter
     adapter.submitList(data)
 }
 

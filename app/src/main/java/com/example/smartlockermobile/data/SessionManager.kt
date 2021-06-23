@@ -61,4 +61,11 @@ class SessionManager(context: Context) {
     fun fetchToolId() : String {
         return prefs.getString("toolId", "-1")!!
     }
+
+    fun removeAllData() {
+        val editor = prefs.edit().remove(USER_TOKEN).remove(USER_NAME).remove(USER_SURNAME).remove(USER_ROLE).remove(
+            TOKEN_DATE
+        ).remove(USER_ID)
+        editor.apply()
+    }
 }
